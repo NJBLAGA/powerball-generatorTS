@@ -1,4 +1,4 @@
-# **PowerBall Generator:**
+# **PowerBall Generator**
 
 Generates random Power-ball draws.
 
