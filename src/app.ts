@@ -61,7 +61,7 @@ interface MultiResults {
 }
 
 //constructs powerball game object
-function powerBallDraw() {
+export function powerBallDraw() {
   const powerballDrawResults: Results = {
     Numbers: addNumbersToDraw(),
     PowerBall: addPowerBallToDraw(),
@@ -70,7 +70,7 @@ function powerBallDraw() {
 }
 
 // constructs multiObj with 20 unique powerball draws
-function createMultiplePowerBallObj() {
+export function createMultiplePowerBallObj() {
   let count: number = 1;
   const powerballPossibilities = 21;
   const multiDrawObj: MultiResults = {};
@@ -87,7 +87,7 @@ function createMultiplePowerBallObj() {
 }
 
 // takes multiObj and displays results
-function displayResults(obj: MultiResults) {
+export function displayResults(obj: MultiResults) {
   for (let key in obj) {
     const { Numbers, PowerBall } = obj[key];
     const results = `

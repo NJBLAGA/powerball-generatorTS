@@ -4,6 +4,7 @@ import {
   addNumbersToDraw,
   sortNumbers,
   validPowerBall,
+  displayResults,
 } from "../src/app";
 
 describe("randomNumber function", () => {
@@ -48,5 +49,15 @@ describe("validPowerBall function", () => {
     let powerBallNumbers: number[] = [5];
     let newPowerBallDraw: number = 5;
     expect(validPowerBall(newPowerBallDraw)).toEqual(powerBallNumbers);
+  });
+});
+
+describe("displayResults function", () => {
+  test("displays a string with 20 draws", () => {
+    let results = "Draw 1";
+    let drawObj = {
+      "1": { Numbers: [3, 15, 17, 18, 22, 31, 35], PowerBall: 6 },
+    };
+    expect(displayResults(drawObj)).toMatch(new RegExp("results"));
   });
 });

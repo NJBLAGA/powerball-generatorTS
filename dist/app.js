@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addPowerBallToDraw = exports.validPowerBall = exports.sortNumbers = exports.addNumbersToDraw = exports.randomPowerBall = exports.randomNumber = void 0;
+exports.displayResults = exports.createMultiplePowerBallObj = exports.powerBallDraw = exports.addPowerBallToDraw = exports.validPowerBall = exports.sortNumbers = exports.addNumbersToDraw = exports.randomPowerBall = exports.randomNumber = void 0;
 // returns random number (1-35)
 function randomNumber() {
     return Math.floor(Math.random() * 35 + 1);
@@ -61,6 +61,7 @@ function powerBallDraw() {
     };
     return powerballDrawResults;
 }
+exports.powerBallDraw = powerBallDraw;
 // constructs multiObj with 20 unique powerball draws
 function createMultiplePowerBallObj() {
     let count = 1;
@@ -77,6 +78,7 @@ function createMultiplePowerBallObj() {
     }
     return displayResults(multiDrawObj);
 }
+exports.createMultiplePowerBallObj = createMultiplePowerBallObj;
 // takes multiObj and displays results
 function displayResults(obj) {
     for (let key in obj) {
@@ -91,4 +93,5 @@ function displayResults(obj) {
         console.log(results);
     }
 }
+exports.displayResults = displayResults;
 createMultiplePowerBallObj();
