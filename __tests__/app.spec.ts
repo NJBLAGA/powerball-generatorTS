@@ -4,7 +4,8 @@ import {
   addNumbersToDraw,
   sortNumbers,
   validPowerBall,
-  displayResults,
+  addPowerBallToDraw,
+  powerBallDraw,
 } from "../src/app";
 
 describe("randomNumber function", () => {
@@ -52,12 +53,22 @@ describe("validPowerBall function", () => {
   });
 });
 
-describe("displayResults function", () => {
-  test("displays a string with 20 draws", () => {
-    let results = "Draw 1";
-    let drawObj = {
-      "1": { Numbers: [3, 15, 17, 18, 22, 31, 35], PowerBall: 6 },
-    };
-    expect(displayResults(drawObj)).toMatch(new RegExp("results"));
+// describe("addPowerBallToDraw function", () => {
+//   test("returns ", () => {
+//     expect(addPowerBallToDraw()).toEqual(false);
+//   });
+// });
+
+describe("powerBallDraw function", () => {
+  test("returns object with properties: Numbers and PowerBall", () => {
+    expect(powerBallDraw()).toHaveProperty("Numbers");
+    expect(powerBallDraw()).toHaveProperty("PowerBall");
+  });
+  test("Numbers array contains 7 elements", () => {
+    let numbersLength = 7;
+    expect(powerBallDraw().Numbers).toHaveLength(numbersLength);
+  });
+  test("PowerBall property value is type of number", () => {
+    expect(typeof powerBallDraw().PowerBall).toBe("number");
   });
 });
